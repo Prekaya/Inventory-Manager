@@ -1,3 +1,3 @@
 # Inventory Manager Client Side
-![SOSHGIC](https://github.com/Prekaya/Inventory-Manager-Client-Side-/blob/master/docs/SOS%20logo%20Black.png)
+<img src="docs/SOS logo Black.png" width = "205" length = "205">
 This is the repository for the Desktop standalone Reprographics Inventory Manager for SOSHGIC. It was made by the CS class of 2019. It's a Java FX application made in NetBeans.
