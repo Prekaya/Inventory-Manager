@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="439.0" prefWidth="650.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication3.FXMLDocumentController">
+   <children>
+      <TextArea layoutX="54.0" layoutY="139.0" prefHeight="239.0" prefWidth="542.0" style="-fx-border-color: FF9900;" wrapText="true" />
+      <Label layoutX="54.0" layoutY="65.0" text="To:" />
+      <Label layoutX="54.0" layoutY="100.0" text="Subject:" />
+      <TextField layoutX="113.0" layoutY="61.0" prefHeight="25.0" prefWidth="483.0" style="-fx-border-color: FF9900;" />
+      <TextField layoutX="113.0" layoutY="96.0" prefHeight="25.0" prefWidth="483.0" style="-fx-border-color: FF9900;" />
+      <Button fx:id="SendButton" layoutX="472.0" layoutY="397.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="56.0" style="-fx-background-color: FF9900;" text="Send" textFill="WHITE" />
+      <Button fx:id="CancelButton" layoutX="540.0" layoutY="398.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="56.0" style="-fx-background-color: FF9900;" text="Cancel" textFill="WHITE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fb0e0" height="43.0" layoutX="-4.0" layoutY="-2.0" stroke="#00000002" strokeType="INSIDE" width="657.0" />
+      <Label layoutX="297.0" layoutY="3.0" prefHeight="34.0" prefWidth="56.0" text="Mail" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="43.0" fitWidth="49.0" layoutX="14.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../SOS%20logo%20Black.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
