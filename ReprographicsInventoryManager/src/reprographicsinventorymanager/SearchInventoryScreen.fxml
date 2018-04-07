@@ -19,12 +19,12 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <Label layoutX="42.0" layoutY="14.0" text="Search Item Name" />
-                  <TextField layoutX="17.0" layoutY="31.0" />
+                  <TextField layoutX="17.0" layoutY="31.0" style="-fx-border-color: FF9900;" />
                   <Label layoutX="52.0" layoutY="82.0" text="Search Item ID" />
-                  <TextField layoutX="17.0" layoutY="100.0" />
+                  <TextField layoutX="17.0" layoutY="100.0" style="-fx-border-color: FF9900;" />
                   <Label layoutX="41.0" layoutY="151.0" text="Search Item Type" />
                   <ChoiceBox layoutX="18.0" layoutY="168.0" prefWidth="150.0" />
-                  <Button layoutX="67.0" layoutY="243.0" mnemonicParsing="false" text="Search" />
+                  <Button layoutX="67.0" layoutY="243.0" mnemonicParsing="false" style="-fx-background-color: FF9900;" text="Search" textFill="WHITE" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
