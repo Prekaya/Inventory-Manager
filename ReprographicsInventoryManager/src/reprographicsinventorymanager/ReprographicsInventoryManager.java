@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package reprographicsinventorymanager;
 
+import java.sql.SQLException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,7 +16,10 @@ import javafx.stage.Stage;
 public class ReprographicsInventoryManager extends Application {
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws SQLException {
+        
+        DatabaseManager.addItem(new InventoryItem(454, "Coconut Water", 854, false));
+        
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
