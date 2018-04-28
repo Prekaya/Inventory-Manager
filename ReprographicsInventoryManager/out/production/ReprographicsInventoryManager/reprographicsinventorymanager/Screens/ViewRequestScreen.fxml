@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reprographicsinventorymanager.Screens.ViewRequestScreenController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: hite;" VBox.vgrow="ALWAYS">
+      <children>
+        <Label layoutX="43.0" layoutY="84.0" prefHeight="34.0" prefWidth="72.0" text="Details" textAlignment="CENTER" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <Button layoutX="537.0" layoutY="210.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" style="-fx-background-color: FF9900;" text="Reject" textFill="#fcfcfc" />
+            <Button layoutX="537.0" layoutY="338.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" style="-fx-background-color: FF9900;" text="Complete" textFill="#f5f3f3" />
+            <Button layoutX="537.0" layoutY="145.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="80.0" style="-fx-background-color: FF9900;" text="Email requester" textAlignment="CENTER" textFill="#fffdfd" wrapText="true" />
+            <Label alignment="CENTER" layoutX="375.0" layoutY="88.0" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #1FB0E0;" text="Completion Status" textFill="#f8f5f5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="14.0" prefHeight="34.0" prefWidth="480.0" style="-fx-background-color: #1FB0E0;" text="Request title" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="25.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ProgressIndicator layoutX="511.0" layoutY="84.0" prefHeight="43.0" prefWidth="80.0" progress="0.0" style="-fx-border-color: FF9900;" />
+            <Button layoutX="537.0" layoutY="271.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" style="-fx-background-color: FF9900;" text="Start" textFill="#fffdfd" />
+            <Label alignment="CENTER" layoutX="43.0" layoutY="128.0" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #1FB0E0;" text="Requester" textAlignment="CENTER" textFill="#f8f5f5" />
+            <Label alignment="CENTER" layoutX="43.0" layoutY="162.0" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #1FB0E0;" text="Date Recieved" textFill="#f8f5f5" />
+            <Label alignment="CENTER" layoutX="43.0" layoutY="200.0" prefHeight="27.0" prefWidth="115.0" style="-fx-background-color: #1FB0E0;" text="Date Completed" textFill="#f8f5f5" />
+            <TableView layoutX="162.0" layoutY="257.0" prefHeight="123.0" prefWidth="321.0" style="-fx-border-color: FF9900;">
+              <columns>
+                <TableColumn prefWidth="173.0" style="-fx-background-color: #1FB0E0;" text="Items" />
+                <TableColumn prefWidth="146.0" style="-fx-background-color: #1FB0E0;" text="Cost" />
+              </columns>
+            </TableView>
+            <ScrollBar layoutX="483.0" layoutY="257.0" orientation="VERTICAL" prefHeight="123.0" prefWidth="14.0" />
+            <TextField layoutX="171.0" layoutY="129.0" style="-fx-border-color: FF9900;" />
+            <TextField layoutX="171.0" layoutY="163.0" style="-fx-border-color: FF9900;" />
+            <TextField layoutX="171.0" layoutY="201.0" style="-fx-border-color: FF9900;" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

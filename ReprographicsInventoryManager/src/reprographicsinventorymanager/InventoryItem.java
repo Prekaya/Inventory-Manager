@@ -22,13 +22,17 @@ public class InventoryItem {
     public int getSupplierId() {
         return supplierId;
     }
-    
-    
-    
-    public InventoryItem(int id, String name, int supplierId, boolean boughtonDemand) {
+
+    public int getCount() { return count; }
+
+    public double getPrice() { return price; }
+
+    public InventoryItem(int id, String name, int supplierId, boolean boughtonDemand, int count, double price) {
         this.id = id;
         this.name = name;
         this.supplierId = supplierId;
         this.isBoughtOnDemand = boughtonDemand;
+        this.count = count;
+        this.price = price;
     }
 }
