@@ -1,5 +1,8 @@
 
 package reprographicsinventorymanager;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
 
 /**
@@ -12,7 +15,9 @@ public class DatabaseManager {
     private DatabaseManager(){} //This class is static; it shouldn't be able to be instanced
     
     private static Connection databaseConenction;
-    private static String DATABASE_URL = "jdbc:mysql://127.0.0.1/reprographics";  
+    private static String DATABASE_URL = "jdbc:mysql://127.0.0.1/reprographics";
+    private static ResultSet resultSet;
+    private static ObservableList<InventoryItem> data = FXCollections.observableArrayList();
     
     private static void processError(Exception e){
         System.out.println(e);
@@ -46,5 +51,34 @@ public class DatabaseManager {
         }
       
     }
-    
+
+    public static void search(int id, String name) throws SQLException {
+        int itemID;
+        String itemName;
+        int itemQuantity;
+        Double itemPrice;
+
+        PreparedStatement statement;
+
+        connect();
+        statement = databaseConenction.prepareStatement("SELECT * from Inventory WHERE (ItemID = ? OR Item Name = ?)");
+
+        statement.setString(1, String.valueOf(id));
+        statement.setString(2, name);
+
+        resultSet = statement.getResultSet();
+
+        while (resultSet.next()) {
+            itemID = resultSet.getInt("ItemID");
+            itemName = resultSet.getString("Item Name");
+            itemQuantity = resultSet.getInt("Quantity");
+            itemPrice = resultSet.getDouble("Price");
+            data.add(new InventoryItem(itemID, itemName, 0, false, itemQuantity, itemPrice));
+        }
+
+    }
+
+    public static ObservableList<InventoryItem> getData() {
+        return data;
+    }
 }
