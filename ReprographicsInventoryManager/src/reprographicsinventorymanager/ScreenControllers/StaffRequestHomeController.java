@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package classi;
+package reprographicsinventorymanager.ScreenControllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,12 +12,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
-
 /**
  *
- * @author Narh_p
+ * @author Rushabure_g
  */
-public class FXMLDocumentController implements Initializable {
+public class StaffRequestHomeController implements Initializable {
     
     @FXML
     private Label label;

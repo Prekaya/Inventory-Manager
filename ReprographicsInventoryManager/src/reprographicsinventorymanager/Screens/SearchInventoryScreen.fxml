@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SearchInventoryScreen">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml" fx:controller="reprographicsinventorymanager.ScreenControllers.SearchInventoryScreenController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1bc0e0" height="77.0" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0" />
       <SplitPane dividerPositions="0.31" layoutY="77.0" prefHeight="323.0" prefWidth="600.0">
@@ -19,22 +19,22 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <Label layoutX="42.0" layoutY="14.0" text="Search Item Name" />
-                  <TextField layoutX="17.0" layoutY="31.0" style="-fx-border-color: FF9900;" />
+                  <TextField fx:id="searchItemNameTxtFld" layoutX="17.0" layoutY="31.0" style="-fx-border-color: FF9900;" />
                   <Label layoutX="52.0" layoutY="82.0" text="Search Item ID" />
-                  <TextField layoutX="17.0" layoutY="100.0" style="-fx-border-color: FF9900;" />
+                  <TextField fx:id="searchItemIDTxtFld" layoutX="17.0" layoutY="100.0" style="-fx-border-color: FF9900;" />
                   <Label layoutX="41.0" layoutY="151.0" text="Search Item Type" />
                   <ChoiceBox layoutX="18.0" layoutY="168.0" prefWidth="150.0" />
-                  <Button layoutX="67.0" layoutY="243.0" mnemonicParsing="false" style="-fx-background-color: FF9900;" text="Search" textFill="WHITE" />
+                  <Button fx:id="searchBtn" layoutX="67.0" layoutY="243.0" mnemonicParsing="false" onAction="#search" style="-fx-background-color: FF9900;" text="Search" textFill="WHITE" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView prefHeight="321.0" prefWidth="417.0">
+                  <TableView fx:id="tableView" prefHeight="321.0" prefWidth="417.0">
                     <columns>
-                        <TableColumn prefWidth="49.0" text="ID" />
-                      <TableColumn prefWidth="174.0" text="Item" />
-                      <TableColumn prefWidth="97.66668701171875" text="Quantity" />
-                        <TableColumn prefWidth="95.0" text="Price" />
+                        <TableColumn fx:id="idTableColumn" prefWidth="49.0" text="ID" />
+                      <TableColumn fx:id="itemTableColumn" prefWidth="174.0" text="Item" />
+                      <TableColumn fx:id="quantityTableColumn" prefWidth="97.66668701171875" text="Quantity" />
+                        <TableColumn fx:id="priceTableColumn" prefWidth="95.0" text="Price" />
                     </columns>
                   </TableView>
                </children>

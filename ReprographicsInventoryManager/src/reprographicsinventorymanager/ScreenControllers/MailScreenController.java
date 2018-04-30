@@ -3,30 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package reprographicsinventorymanager;
+package reprographicsinventorymanager.ScreenControllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 
 /**
+ * FXML Controller class
  *
- * @author Rushabure_g
+ * @author ADDO_a
  */
-public class StaffRequestHomeController implements Initializable {
-    
+public class MailScreenController implements Initializable {
+
     @FXML
-    private Label label;
-    
+    private Button SendButton;
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
-    
+    private Button CancelButton;
+
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

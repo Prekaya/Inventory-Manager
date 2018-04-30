@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="439.0" prefWidth="650.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication3.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="439.0" prefWidth="650.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication3.FXMLDocumentController">
    <children>
       <TextArea layoutX="54.0" layoutY="139.0" prefHeight="239.0" prefWidth="542.0" style="-fx-border-color: FF9900;" wrapText="true" />
       <Label layoutX="54.0" layoutY="65.0" text="To:" />
@@ -27,7 +27,7 @@
       </Label>
       <ImageView fitHeight="43.0" fitWidth="49.0" layoutX="14.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../SOS%20logo%20Black.png" />
+            <Image url="@../../Images/SOS%20logo%20Black.png" />
          </image>
       </ImageView>
    </children>

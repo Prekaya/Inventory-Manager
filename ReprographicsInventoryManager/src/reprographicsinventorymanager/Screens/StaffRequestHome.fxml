@@ -61,7 +61,7 @@
             </Text>
             <ImageView fitHeight="63.0" fitWidth="69.0" layoutX="58.0" layoutY="22.0">
                <image>
-                  <Image url="@../Images/Home%20Screen%20Icon.png" />
+                  <Image url="@../../Images/Home%20Screen%20Icon.png" />
                </image>
             </ImageView>
          </children>
