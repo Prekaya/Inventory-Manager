@@ -1,5 +1,6 @@
 package reprographicsinventorymanager.ScreenControllers;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -32,8 +33,8 @@ public class SearchInventoryScreenController {
     }
 
     @FXML private void search() throws Exception {
-        DatabaseManager.search(Integer.parseInt(searchItemIDTxtFld.getText()), searchItemNameTxtFld.getText());
-        tableView.setItems(DatabaseManager.getData());
+        ObservableList<InventoryItem> data = DatabaseManager.searchItemsWithQuery(Integer.parseInt(searchItemIDTxtFld.getText()), searchItemNameTxtFld.getText());
+        tableView.setItems(data);
     }
 
 }

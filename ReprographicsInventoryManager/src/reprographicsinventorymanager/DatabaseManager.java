@@ -52,7 +52,10 @@ public class DatabaseManager {
       
     }
 
-    public static void search(int id, String name) throws SQLException {
+    public static ObservableList searchItemsWithQuery(int id, String name) throws SQLException {
+        
+        ObservableList<InventoryItem> data = FXCollections.observableArrayList();
+        
         int itemID;
         String itemName;
         int itemQuantity;
@@ -75,10 +78,7 @@ public class DatabaseManager {
             itemPrice = resultSet.getDouble("Price");
             data.add(new InventoryItem(itemID, itemName, 0, false, itemQuantity, itemPrice));
         }
-
-    }
-
-    public static ObservableList<InventoryItem> getData() {
         return data;
     }
+
 }
