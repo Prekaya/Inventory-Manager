@@ -31,7 +31,16 @@ public class SearchInventoryScreenController {
     }
 
     @FXML private void search() throws Exception {
-        ObservableList<InventoryItem> data = DatabaseManager.searchItemsWithQuery(Integer.parseInt(searchItemIDTxtFld.getText()), searchItemNameTxtFld.getText());
+        ObservableList<InventoryItem> data;
+        try {
+            data = DatabaseManager.searchItemsWithQuery(Integer.parseInt(searchItemIDTxtFld.getText()), searchItemNameTxtFld.getText());
+        } catch (Exception e) {
+            try {
+                data = DatabaseManager.searchItemsWithQuery(Integer.parseInt(searchItemNameTxtFld.getText()));
+            } catch (Exception ex) {
+                data = DatabaseManager.searchItemsWithQuery(searchItemNameTxtFld.getText());
+            }
+        }
         tableView.setItems(data);
     }
 

@@ -62,7 +62,7 @@ public class DatabaseManager {
         Double itemPrice;
 
         PreparedStatement statement;
-        String query = "SELECT * FROM `inventory` WHERE (ItemID = " + Integer.toString(id) + ")";
+        String query = "SELECT * FROM `inventory` WHERE ItemID = " + Integer.toString(id) + " OR " + "ItemName = '" + name + "';";
 
         connect();
         statement = databaseConnection.prepareStatement(query);
@@ -74,7 +74,67 @@ public class DatabaseManager {
 
         while (resultSet.next()) {
             itemID = resultSet.getInt("ItemID");
-            itemName = resultSet.getString("Item Name");
+            itemName = resultSet.getString("ItemName");
+            itemQuantity = resultSet.getInt("Quantity");
+            itemPrice = resultSet.getDouble("Price");
+            data.add(new InventoryItem(itemID, itemName, 0, false, itemQuantity, itemPrice));
+        }
+        return data;
+    }
+
+    public static ObservableList<InventoryItem> searchItemsWithQuery(int id) throws SQLException, ClassNotFoundException {
+
+        ObservableList<InventoryItem> data = FXCollections.observableArrayList();
+
+        int itemID;
+        String itemName;
+        int itemQuantity;
+        Double itemPrice;
+
+        PreparedStatement statement;
+        String query = "SELECT * FROM `inventory` WHERE ItemID = " + Integer.toString(id);
+
+        connect();
+        statement = databaseConnection.prepareStatement(query);
+
+        statement.execute(query);
+        resultSet = statement.getResultSet();
+
+        System.out.println("Data retrieved");
+
+        while (resultSet.next()) {
+            itemID = resultSet.getInt("ItemID");
+            itemName = resultSet.getString("ItemName");
+            itemQuantity = resultSet.getInt("Quantity");
+            itemPrice = resultSet.getDouble("Price");
+            data.add(new InventoryItem(itemID, itemName, 0, false, itemQuantity, itemPrice));
+        }
+        return data;
+    }
+
+    public static ObservableList<InventoryItem> searchItemsWithQuery(String name) throws SQLException, ClassNotFoundException {
+
+        ObservableList<InventoryItem> data = FXCollections.observableArrayList();
+
+        int itemID;
+        String itemName;
+        int itemQuantity;
+        Double itemPrice;
+
+        PreparedStatement statement;
+        String query = "SELECT * FROM `inventory` WHERE ItemName = '" + name + "';";
+
+        connect();
+        statement = databaseConnection.prepareStatement(query);
+
+        statement.execute(query);
+        resultSet = statement.getResultSet();
+
+        System.out.println("Data retrieved");
+
+        while (resultSet.next()) {
+            itemID = resultSet.getInt("ItemID");
+            itemName = resultSet.getString("ItemName");
             itemQuantity = resultSet.getInt("Quantity");
             itemPrice = resultSet.getDouble("Price");
             data.add(new InventoryItem(itemID, itemName, 0, false, itemQuantity, itemPrice));
