@@ -4,6 +4,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -24,6 +25,7 @@ public class ReprographicsInventoryManager extends Application {
        Scene scene = new Scene(root, 355, 500);
         mainStage.setScene(scene);
         mainStage.setResizable(true);
+        mainStage.setTitle("SOS-HGIC Reprographics");
         mainStage.show();
     }
 
@@ -39,6 +41,7 @@ public class ReprographicsInventoryManager extends Application {
         mainStage = primaryStage;
         primaryStage.setTitle("Login");
         primaryStage.setScene(scene);
+        primaryStage.getIcons().add(new Image("Images/SOS logo Black.png"));
         primaryStage.setResizable(true);
         primaryStage.show();
 
