@@ -35,9 +35,14 @@ public class LoginScreenController implements Initializable {
         // TODO
     }
 
+    
+    @FXML
     public void signIn() throws Exception {
-        Pane root = FXMLLoader.load(getClass().getResource("../Screens/SearchInventoryScreen.fxml"));
-        pane.getChildren().setAll(root);
+        Parent root = ReprographicsInventoryManager.Instance.getResourceExternally("Screens/SearchInventoryScreen.fxml");
+        Scene scene = new Scene(root);
+        ReprographicsInventoryManager.Instance.mainStage.close();
+        ReprographicsInventoryManager.Instance.mainStage.setScene(scene);
+        ReprographicsInventoryManager.Instance.mainStage.show();
     }
 
 }

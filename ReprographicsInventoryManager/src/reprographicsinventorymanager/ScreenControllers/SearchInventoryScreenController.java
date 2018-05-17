@@ -1,8 +1,11 @@
 package reprographicsinventorymanager.ScreenControllers;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -13,7 +16,7 @@ import reprographicsinventorymanager.InventoryItem;
 import reprographicsinventorymanager.InventoryItemTableData;
 
 
-public class SearchInventoryScreenController {
+public class SearchInventoryScreenController implements  Initializable{
     @FXML private TextField searchItemNameTxtFld;
     @FXML private TextField searchItemIDTxtFld;
     @FXML private Button searchBtn;
@@ -39,6 +42,11 @@ public class SearchInventoryScreenController {
         ObservableList<InventoryItem> data = DatabaseManager.searchItemsWithQuery(Integer.parseInt(searchItemIDTxtFld.getText()), searchItemNameTxtFld.getText());
         // ObservableList<InventoryItemTableData> tableData = InventoryItemTableData.convertToTableData(data); If you make it work without it, you can delete the class as well
         tableView.setItems(data);
+    }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
     }
 
 }
