@@ -19,8 +19,12 @@ public class ReprographicsInventoryManager extends Application {
     
     public static  ReprographicsInventoryManager Instance;
     
-    public Pane getResourceExternally(String path) throws IOException{
-      return loader.load(getClass().getResource("Screens/LoginScreen.fxml"));  
+    public void goToScreen(String path) throws IOException{
+       AnchorPane root = loader.load(getClass().getResource(path));  
+       Scene scene = new Scene(root, 355, 500);
+        mainStage.setScene(scene);
+        mainStage.setResizable(true);
+        mainStage.show();
     }
 
     @Override
