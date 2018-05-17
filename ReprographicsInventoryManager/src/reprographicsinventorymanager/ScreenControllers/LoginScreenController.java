@@ -36,7 +36,7 @@ public class LoginScreenController implements Initializable {
     }
 
     public void signIn() throws Exception {
-        Pane root = FXMLLoader.load(getClass().getResource("../Screens/ViewRequestScreen.fxml"));
+        Pane root = FXMLLoader.load(getClass().getResource("../Screens/SearchInventoryScreen.fxml"));
         pane.getChildren().setAll(root);
     }
 

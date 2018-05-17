@@ -14,31 +14,31 @@ public class DatabaseManager {
     
     private DatabaseManager(){} //This class is static; it shouldn't be able to be instanced
     
-    private static Connection databaseConenction;
-    private static String DATABASE_URL = "jdbc:mysql://127.0.0.1/reprographics";
+    private static Connection databaseConnection;
+    private static String DATABASE_URL = "jdbc:mysql://127.0.0.1:3306/reprographicsdb";
     private static ResultSet resultSet;
-    private static ObservableList<InventoryItem> data = FXCollections.observableArrayList();
-    
+
     private static void processError(Exception e){
         System.out.println(e);
     }
     
-    private  static void connect() throws SQLException{
+    private  static void connect() throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.jdbc.Driver");
         try {
-            if (databaseConenction != null) {
+            if (databaseConnection != null) {
                 return;
             }
-            //Making a conenction using the default root phpMyAdmin account
-            databaseConenction = DriverManager.getConnection(DATABASE_URL, "root", "");
-        } catch (SQLException sQLException) {
-            System.out.println(sQLException);
-        }    
+            //Making a connection using the default root phpMyAdmin account
+            databaseConnection = DriverManager.getConnection(DATABASE_URL, "root", "");
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
     }
     
     public static void addItem (InventoryItem item){
         try {
             connect();
-            Statement statement = databaseConenction.createStatement();
+            Statement statement = databaseConnection.createStatement();
             
             String command = String.format("INSERT INTO `INVENTORY`"
                     + "VALUES (%d, '%s', 0, 'null' , 0, %d, %d)", 
@@ -49,10 +49,10 @@ public class DatabaseManager {
         } catch (Exception e) {
             processError(e);
         }
-      
+
     }
 
-    public static ObservableList searchItemsWithQuery(int id, String name) throws SQLException {
+    public static ObservableList<InventoryItem> searchItemsWithQuery(int id, String name) throws SQLException, ClassNotFoundException {
         
         ObservableList<InventoryItem> data = FXCollections.observableArrayList();
         
@@ -62,14 +62,15 @@ public class DatabaseManager {
         Double itemPrice;
 
         PreparedStatement statement;
+        String query = "SELECT * FROM `inventory` WHERE (ItemID = " + Integer.toString(id) + ")";
 
         connect();
-        statement = databaseConenction.prepareStatement("SELECT * from Inventory WHERE (ItemID = ? OR Item Name = ?)");
+        statement = databaseConnection.prepareStatement(query);
 
-        statement.setString(1, String.valueOf(id));
-        statement.setString(2, name);
-
+        statement.execute(query);
         resultSet = statement.getResultSet();
+
+        System.out.println("Data retrieved");
 
         while (resultSet.next()) {
             itemID = resultSet.getInt("ItemID");

@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="366.0" style="-fx-background-color: 505050;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reprographicsinventorymanager.ScreenControllers.LoginScreenController">
+<AnchorPane id="AnchorPane" fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="366.0" style="-fx-background-color: 505050;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml" fx:controller="reprographicsinventorymanager.ScreenControllers.LoginScreenController">
    <effect>
       <Glow />
    </effect>
