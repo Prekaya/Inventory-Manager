@@ -26,12 +26,7 @@ public class SearchInventoryScreenController implements  Initializable{
     @FXML private TableColumn<InventoryItem, Integer> quantityTableColumn;
     @FXML private TableColumn<InventoryItem, Double> priceTableColumn;
 
-    public SearchInventoryScreenController() {
-        this.tableView = new TableView<>();
-        this.idTableColumn = new TableColumn<>();
-        this.itemTableColumn = new TableColumn<>();
-        this.quantityTableColumn = new TableColumn<>();
-        this.priceTableColumn = new TableColumn<>();
+    @FXML public void initialize() {
         idTableColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         itemTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         quantityTableColumn.setCellValueFactory(new PropertyValueFactory<>("count"));
@@ -40,7 +35,6 @@ public class SearchInventoryScreenController implements  Initializable{
 
     @FXML private void search() throws Exception {
         ObservableList<InventoryItem> data = DatabaseManager.searchItemsWithQuery(Integer.parseInt(searchItemIDTxtFld.getText()), searchItemNameTxtFld.getText());
-        // ObservableList<InventoryItemTableData> tableData = InventoryItemTableData.convertToTableData(data); If you make it work without it, you can delete the class as well
         tableView.setItems(data);
     }
     

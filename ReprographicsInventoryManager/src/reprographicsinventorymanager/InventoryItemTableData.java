@@ -1,5 +1,6 @@
 package reprographicsinventorymanager;
 
+import javafx.beans.property.Property;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,19 +11,19 @@ public class InventoryItemTableData { // If you can populate the tableview witho
     SimpleStringProperty itemQuantity;
     SimpleStringProperty itemPrice;
 
-    public SimpleStringProperty getItemID() {
+    public Property itemIDProperty() {
         return itemID;
     }
 
-    public SimpleStringProperty getItemName() {
-        return this.itemName;
+    public Property itemNameProperty() {
+        return itemName;
     }
 
-    public SimpleStringProperty getItemQuantity() {
-        return this.itemQuantity;
+    public Property itemQuantityProperty() {
+        return itemQuantity;
     }
 
-    public SimpleStringProperty getItemPrice() {
+    public Property itemPriceProperty() {
         return itemPrice;
     }
 
