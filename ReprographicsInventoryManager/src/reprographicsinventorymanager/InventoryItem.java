@@ -6,26 +6,28 @@ package reprographicsinventorymanager;
  */
 public class InventoryItem {
     
-    private int id;
+    public Integer id;
     public String name;
-    public int count;
-    public double price;
-    
+    public Integer count;
+    public Double price;
     public boolean isBoughtOnDemand = false;
+    private int supplierId;
     
-    private int supplierId;  
-    
-    public int getId() {
+    public Integer getId() {
         return id;
     }
+
+    public String getName() { return  name; }
 
     public int getSupplierId() {
         return supplierId;
     }
 
-    public int getCount() { return count; }
+    public Integer getCount() { return count; }
 
-    public double getPrice() { return price; }
+    public Double getPrice() { return price; }
+
+    public boolean isBoughtOnDemand() { return isBoughtOnDemand; }
 
     public InventoryItem(int id, String name, int supplierId, boolean boughtonDemand, int count, double price) {
         this.id = id;
