@@ -25,7 +25,7 @@ import reprographicsinventorymanager.ReprographicsInventoryManager;
 public class LoginScreenController implements Initializable {
 
     /**
-     * Initializes the controller class.
+     * Initialises the controller class.
      */
 
     @FXML private AnchorPane pane;
