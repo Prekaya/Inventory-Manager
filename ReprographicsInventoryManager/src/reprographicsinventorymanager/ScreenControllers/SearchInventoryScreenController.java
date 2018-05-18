@@ -16,7 +16,7 @@ import reprographicsinventorymanager.InventoryItem;
 import reprographicsinventorymanager.InventoryItemTableData;
 
 
-public class SearchInventoryScreenController implements  Initializable{
+public class SearchInventoryScreenController {
     @FXML private TextField searchItemNameTxtFld;
     @FXML private TextField searchItemIDTxtFld;
     @FXML private Button searchBtn;
@@ -36,20 +36,15 @@ public class SearchInventoryScreenController implements  Initializable{
     @FXML private void search() throws Exception {
         ObservableList<InventoryItem> data;
         try {
-            data = DatabaseManager.searchItemsWithQuery(Integer.parseInt(searchItemIDTxtFld.getText()), searchItemNameTxtFld.getText());
+                data = DatabaseManager.searchItemsWithQuery(Integer.parseInt(searchItemIDTxtFld.getText()));
         } catch (Exception e) {
             try {
-                data = DatabaseManager.searchItemsWithQuery(Integer.parseInt(searchItemNameTxtFld.getText()));
-            } catch (Exception ex) {
                 data = DatabaseManager.searchItemsWithQuery(searchItemNameTxtFld.getText());
+            } catch (Exception ex) {
+                data = DatabaseManager.searchItemsWithQuery(Integer.parseInt(searchItemIDTxtFld.getText()), searchItemNameTxtFld.getText());
             }
         }
         tableView.setItems(data);
-    }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }
 
 }

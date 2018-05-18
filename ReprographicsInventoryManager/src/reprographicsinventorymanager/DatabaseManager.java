@@ -53,7 +53,9 @@ public class DatabaseManager {
     }
 
     public static ObservableList<InventoryItem> searchItemsWithQuery(int id, String name) throws SQLException, ClassNotFoundException {
-        
+
+        System.out.println("Searching by id and name");
+
         ObservableList<InventoryItem> data = FXCollections.observableArrayList();
         
         int itemID;
@@ -62,7 +64,7 @@ public class DatabaseManager {
         Double itemPrice;
 
         PreparedStatement statement;
-        String query = "SELECT * FROM `inventory` WHERE ItemID = " + Integer.toString(id) + " OR " + "ItemName = '" + name + "';";
+        String query = "SELECT * FROM `inventory` WHERE ItemID CONTAINS " + Integer.toString(id) + " OR " + "ItemName LIKE '%" + name + "%';";
 
         connect();
         statement = databaseConnection.prepareStatement(query);
@@ -84,6 +86,8 @@ public class DatabaseManager {
 
     public static ObservableList<InventoryItem> searchItemsWithQuery(int id) throws SQLException, ClassNotFoundException {
 
+        System.out.println("Searching by id");
+
         ObservableList<InventoryItem> data = FXCollections.observableArrayList();
 
         int itemID;
@@ -92,7 +96,7 @@ public class DatabaseManager {
         Double itemPrice;
 
         PreparedStatement statement;
-        String query = "SELECT * FROM `inventory` WHERE ItemID = " + Integer.toString(id);
+        String query = "SELECT * FROM `inventory` WHERE ItemID CONTAINS " + Integer.toString(id);
 
         connect();
         statement = databaseConnection.prepareStatement(query);
@@ -114,6 +118,8 @@ public class DatabaseManager {
 
     public static ObservableList<InventoryItem> searchItemsWithQuery(String name) throws SQLException, ClassNotFoundException {
 
+        System.out.println("Searching by name");
+
         ObservableList<InventoryItem> data = FXCollections.observableArrayList();
 
         int itemID;
@@ -122,7 +128,7 @@ public class DatabaseManager {
         Double itemPrice;
 
         PreparedStatement statement;
-        String query = "SELECT * FROM `inventory` WHERE ItemName = '" + name + "';";
+        String query = "SELECT * FROM `inventory` WHERE ItemName LIKE '%" + name + "%';";
 
         connect();
         statement = databaseConnection.prepareStatement(query);
