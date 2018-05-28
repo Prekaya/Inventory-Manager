@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 /**
@@ -41,7 +40,7 @@ public class ReprographicsInventoryManager extends Application {
         mainStage = primaryStage;
         primaryStage.setTitle("Login");
         primaryStage.setScene(scene);
-        primaryStage.getIcons().add(new Image("Images/SOS logo Black.png"));
+        primaryStage.getIcons().add(new Image("reprographicsinventorymanager/Images/SOS logo Black.png"));
         primaryStage.setResizable(true);
         primaryStage.show();
 
